@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安装包链接</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        h2 {
+            color: #555;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .page-intro {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0077cc;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        p {
+            color: #666;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .search-button {
+            background-color: #0077cc;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .return-button {
+            background-color: #ccc;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>欢迎访问安装包链接页面</h1>
+
+        <div class="page-intro">
+            <h2>页面简介：</h2>
+            <p>这是一个方便您查找和下载各种安装包的页面。您可以使用下面的搜索框查找特定的安装包，或者点击下面的按钮返回查看所有可用的安装包。</p>
+        </div>
+
+        <h2>可用的安装包：</h2>
+        <input type="text" id="search" placeholder="搜索安装包">
+        <button class="search-button" onclick="searchPackages()">搜索</button>
+        <button class="return-button" onclick="returnToAllPackages()">返回</button>
+
+        <ul id="package-list">
+            <li>
+                <h3><a href="链接到安装包1的URL">安装包1</a></h3>
+                <p>描述：这是安装包1的描述。</p>
+                <p>版本：1.0.0</p>
+            </li>
+            <!-- 添加更多安装包链接 -->
+            <li>
+                <h3><a href="链接到安装包2的URL">安装包2</a></h3>
+                <p>描述：这是安装包2的描述。</p>
+                <p>版本：2.0.0</p>
+            </li>
+            <li>
+                <h3><a href="链接到安装包3的URL">安装包3</a></h3>
+                <p>描述：这是安装包3的描述。</p>
+                <p>版本：3.0.0</p>
+            </li>
+            <!-- 添加更多安装包链接 -->
+            <!-- 继续添加安装包链接，总共15个 -->
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p>您的标注语将出现在这里。</p>
+    </div>
+
+    <script>
+        function searchPackages() {
+            var input = document.getElementById("search").value.toLowerCase();
+            var packageList = document.getElementById("package-list");
+            var packages = packageList.getElementsByTagName("li");
+
+            for (var i = 0; i < packages.length; i++) {
+                var packageName = packages[i].getElementsByTagName("h3")[0].textContent.toLowerCase();
+                if (packageName.includes(input)) {
+                    packages[i].style.display = "block";
+                } else {
+                    packages[i].style.display = "none";
+                }
+            }
+        }
+
+        function returnToAllPackages() {
+            var packageList = document.getElementById("package-list");
+            var packages = packageList.getElementsByTagName("li");
+
+            for (var i = 0; i < packages.length; i++) {
+                packages[i].style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
